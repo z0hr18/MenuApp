@@ -32,7 +32,10 @@ final class AddMenuViewController: UIViewController {
             target: self,
             action: #selector(saveTapped)
         )
-
+        setupAddedConstraints()
+    }
+    
+    private func setupAddedConstraints() {
         view.addSubview(textField)
         NSLayoutConstraint.activate([
             textField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 24),
