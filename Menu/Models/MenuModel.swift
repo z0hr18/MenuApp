@@ -11,9 +11,14 @@ struct MenuModel: Codable, Hashable {
     let id: String
     let title: String
     let icon: String?
-    let subCategories: [MenuModel]?
-
+    var subCategories: [MenuModel]?
+    
     var hasSubCategories: Bool {
         return subCategories?.isEmpty ?? true
+    }
+    
+    mutating func addSubCategory(_ item: MenuModel) {
+        if subCategories == nil { subCategories = [] }
+        subCategories?.append(item)
     }
 }

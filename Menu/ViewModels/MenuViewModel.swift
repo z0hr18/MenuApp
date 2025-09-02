@@ -12,7 +12,11 @@ final class CategoryViewModel {
     private(set) var selectedMainIndex: Int = 0
     
     func load() {
-        categories = (try? JSONLoader.loadMenu()) ?? []
+        categories = MenuStore.load()
+        if categories.isEmpty {
+            categories = MenuDefaults.initial
+            MenuStore.save(categories)
+        }
     }
     
     /// Header

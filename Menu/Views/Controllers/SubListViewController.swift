@@ -7,7 +7,7 @@
 import UIKit
 
 final class SubListViewController: UIViewController {
-    private let menuModel: MenuModel
+    private var menuModel: MenuModel
     
     private lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: makeSubLayout())
@@ -30,11 +30,22 @@ final class SubListViewController: UIViewController {
         title = menuModel.title
         view.backgroundColor = .systemBackground
         setupCollectionViewConstraints()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: .add,
+            target: self,
+            action: #selector(addTapped)
+        )
     }
     
     private func makeSubLayout() -> UICollectionViewCompositionalLayout {
         let section = AppLayouts.shared.makeDetailListSection()
         return UICollectionViewCompositionalLayout(section: section)
+    }
+    
+    @objc private func addTapped() {
+        let vc = AddMenuViewController()
+        vc.delegate = self
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     private func setupCollectionViewConstraints() {
@@ -84,6 +95,33 @@ extension SubListViewController: UICollectionViewDelegate {
             let alert = UIAlertController(title: menu.title, message: "\(menu.title) yeyə bilməzsiniz!", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .destructive))
             present(alert, animated: true)
+        }
+    }
+}
+
+extension SubListViewController: AddMenuDelegate {
+    func didAddMenuItem(_ title: String) {
+        let newItem = MenuModel(id: UUID().uuidString, title: title, icon: nil, subCategories: nil)
+        
+        menuModel.addSubCategory(newItem)
+        var all = MenuStore.load()
+        updateMenu(in: &all, targetID: menuModel.id, updated: menuModel)
+        MenuStore.save(all)
+        
+        collectionView.reloadData()
+    }
+    
+    private func updateMenu(in list: inout [MenuModel], targetID: String, updated: MenuModel) {
+        for i in 0..<list.count {
+            if list[i].id == targetID {
+                list[i] = updated
+                return
+            }
+            
+            if var subs = list[i].subCategories {
+                updateMenu(in: &subs, targetID: targetID, updated: updated)
+                list[i].subCategories = subs
+            }
         }
     }
 }

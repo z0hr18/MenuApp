@@ -25,10 +25,13 @@ final class CategoryViewController: UIViewController {
         super.viewDidLoad()
         title = "Menyu"
         view.backgroundColor = .systemBackground
-        
-        viewModel.load()
-        
         setupCollectionViewConstraints()
+
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.load()
         collectionView.reloadData()
     }
     
@@ -52,7 +55,6 @@ final class CategoryViewController: UIViewController {
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
-    
 }
 
 // MARK: - DataSource
