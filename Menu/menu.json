@@ -1,0 +1,116 @@
+[
+  {
+    "id": "food",
+    "title": "Yeməklər",
+    "icon": null,
+    "subCategories": [
+      {
+        "id": "hot",
+        "title": "İsti yeməklər",
+        "icon": null,
+        "subCategories": [
+          { "id": "plov", "title": "Plov", "icon": null, "subCategories": null },
+          { "id": "dolma", "title": "Dolma", "icon": null, "subCategories": null },
+          { "id": "kabab", "title": "Kabab", "icon": null, "subCategories": null }
+        ]
+      },
+      {
+        "id": "saj",
+        "title": "Sac yeməkləri",
+        "icon": null,
+        "subCategories": [
+          { "id": "saj_chicken", "title": "Sac Toyuq", "icon": null, "subCategories": null },
+          { "id": "saj_meat", "title": "Sac Ət", "icon": null, "subCategories": null }
+        ]
+      },
+      {
+        "id": "snacks",
+        "title": "Qəlyanaltılar",
+        "icon": null,
+        "subCategories": [
+          { "id": "fries", "title": "Kartof fri", "icon": null, "subCategories": null },
+          { "id": "bruschetta", "title": "Bruşetta", "icon": null, "subCategories": null }
+        ]
+      },
+      {
+        "id": "soups",
+        "title": "Şorəbalar",
+        "icon": null,
+        "subCategories": [
+          { "id": "dovga", "title": "Dovğa", "icon": null, "subCategories": null },
+          { "id": "piti", "title": "Piti", "icon": null, "subCategories": null }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "drinks",
+    "title": "İçkilər",
+    "icon": null,
+    "subCategories": [
+      {
+        "id": "non_alc",
+        "title": "Alkoqolsuz içkilər",
+        "icon": null,
+        "subCategories": [
+          { "id": "tea", "title": "Çay", "icon": null, "subCategories": null },
+          { "id": "coffee", "title": "Qəhvə", "icon": null, "subCategories": null },
+          { "id": "lemonade", "title": "Limonad", "icon": null, "subCategories": null }
+        ]
+      },
+      {
+        "id": "alc",
+        "title": "Alkoqollu içkilər",
+        "icon": null,
+        "subCategories": [
+          {
+            "id": "whisky",
+            "title": "Viskilər",
+            "icon": null,
+            "subCategories": [
+              { "id": "jack", "title": "Jack Daniel's", "icon": null, "subCategories": null },
+              { "id": "chivas", "title": "Chivas Regal", "icon": null, "subCategories": null }
+            ]
+          },
+          {
+            "id": "vodka",
+            "title": "Araqlar",
+            "icon": null,
+            "subCategories": [
+              { "id": "absolut", "title": "Absolut", "icon": null, "subCategories": null },
+              { "id": "smirnoff", "title": "Smirnoff", "icon": null, "subCategories": null }
+            ]
+          },
+          {
+            "id": "wine",
+            "title": "Şərablar",
+            "icon": null,
+            "subCategories": [
+              { "id": "red", "title": "Qırmızı şərab", "icon": null, "subCategories": null },
+              { "id": "white", "title": "Ağ şərab", "icon": null, "subCategories": null }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "desserts",
+    "title": "Desertlər",
+    "icon": null,
+    "subCategories": [
+      { "id": "cake", "title": "Tort", "icon": null, "subCategories": null },
+      { "id": "baklava", "title": "Paxlava", "icon": null, "subCategories": null },
+      { "id": "icecream", "title": "Dondurma", "icon": null, "subCategories": null }
+    ]
+  },
+  {
+    "id": "other",
+    "title": "Digər",
+    "icon": null,
+    "subCategories": [
+      { "id": "sauces", "title": "Souslar", "icon": null, "subCategories": null },
+      { "id": "salads", "title": "Salatlar", "icon": null, "subCategories": null }
+    ]
+  }
+]
